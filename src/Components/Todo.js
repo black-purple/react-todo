@@ -3,23 +3,14 @@ import { useState } from "react";
 const Todo = ({body}) => {
     const [done, setDone] = useState(false);
 
-    const makeDone = () => setDone(true);
-    const makeUndone = () => setDone(false);
-
-    const doneToggle = () => {
-        done ? makeUndone() : makeDone();
-    }
+    const doneToggle = () => setDone(!done);
 
     return (
         <div className="todo" onClick={doneToggle}>
-            { 
-            done 
-            ? <input type="checkbox" checked onClick={doneToggle} /> 
-            : <input type="checkbox" onClick={doneToggle} />
-            }
-            <h4 onClick={doneToggle}>{body}</h4>
+            <input type="checkbox" checked={done} onChange={doneToggle} /> 
+            {done ? <del onClick={doneToggle}>{body}</del> : <h4 onClick={doneToggle}>{body}</h4>}
         </div>
     );
 }
- 
+
 export default Todo;

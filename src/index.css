@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: gray;
+  background-color: lightseagreen;
   height: 100vh;
   box-sizing: border-box;
 }
@@ -22,25 +22,33 @@
   cursor: pointer;
   padding: 1rem 2rem;
   background-color: white;
-  box-shadow: 0 0 .1rem .05rem rgba(0, 0, 0, 0.062);
+  box-shadow: none;
   border-radius: .4rem;
   transition: box-shadow .1s ease-in-out;
-  border: .1rem solid rgba(0, 0, 0, 0.067);
+  border: .1rem solid rgba(0, 0, 0, 0.093);
   margin: 1rem;
 }
 .todo:hover{
-  box-shadow: 0 0 .3rem .3rem rgba(0, 0, 0, 0.062);
+  box-shadow: 0 0 .3rem .3rem rgba(0, 0, 0, 0.055);
 }
 input[type=checkbox]{
   margin-right: 1rem;
 }
-.todos{
-  padding: 2rem;
+.body{
+  display: flex;
+  padding: 1rem 2rem;
   background-color: aliceblue;
   border-radius: .5rem;
-  min-width: 20rem;
+  width: 100vw;
+  overflow: auto;
+  height: 60vh;
+  box-sizing: border-box;
+  margin:0 2rem;
 }
-h4{
+.todos{
+  width: 50%;
+}
+h4, del{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -48,5 +56,65 @@ h4{
 header, footer{
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
+  color: aliceblue;
+}
+.add-todo-form{
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+.add-todo-form button, textarea{
+  border: .1rem solid;
+  padding: .2rem .5rem;
+  border-radius: .2rem;
+  margin: 0 2rem;
+  font-size: 1rem;
+  outline: 0 solid transparent;
+  transition: outline .2s ease-in-out;
+}
+.add-todo-form textarea{
+  border:.1rem solid transparent;
+}
+.add-todo-form button{
+  border-color: transparent;
+  color: white;
+  background-color: lightcoral;
+  cursor: pointer;
+}
+
+.add-todo-form button:hover{
+  outline:.5rem solid #f0808072;
+}
+.add-todo-form textarea:focus{
+  outline:.5rem solid #f0808072;
+  border:.1rem solid lightcoral;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #15716d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(41, 228, 218);
+  cursor: pointer;
+}
+
+a{
+  color: black;
+}
+
+a:visited{
+  color: transparent;
 }

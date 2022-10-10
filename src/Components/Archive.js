@@ -1,5 +1,8 @@
-const Archive = () => {
-    return (<div></div>);
+const Archive = ({archived}) => {
+    return (
+    <>
+        
+    </>);
 }
 
-export default Archive; <div></div>
+export default Archive;
