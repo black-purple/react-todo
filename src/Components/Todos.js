@@ -1,6 +1,6 @@
 import Todo from "./Todo";
 
-const Todos = ({ todoList }) => {
+/* const Todos = ({ todoList }) => {
     return (
         <div className="todos">
             <h2>Todos</h2>
@@ -10,5 +10,16 @@ const Todos = ({ todoList }) => {
         </div>
     );
 }
+*/
+
+function Todos({todosList}) {
+
+    return (<div className="todos">
+        <h2>Todos</h2>
+        {todosList && todosList.map((todo) => <Todo key={todo.id} id={todo.id} description={todo.description}/>)}
+        {todosList.length === 0 && <div>EMPTY LIST</div>}
+    </div>);
+}
 
 export default Todos;
+
